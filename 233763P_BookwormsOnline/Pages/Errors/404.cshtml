@@ -1,0 +1,25 @@
+﻿@page
+@model _233763P_BookwormsOnline.Pages.Errors.custom404Model
+@{
+    ViewData["Title"] = "Page Not Found";
+}
+
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <h1 class="display-1 fw-bold text-danger animate__animated animate__fadeInDown">404</h1>
+    <h2 class="text-secondary">Oops! Page Not Found</h2>
+    <p class="lead text-muted">The page you're looking for doesn't exist or may have been moved.</p>
+
+    <div class="card shadow-lg p-4 border-0 text-center" style="max-width: 400px;">
+        <p class="text-muted">Please return to the NYP website or visit our homepage.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="https://www.nyp.edu.sg/" class="btn btn-primary px-4 shadow-sm">Visit NYP</a>
+            <a href="/Index" class="btn btn-outline-secondary px-4 shadow-sm">Go Home</a>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/2748/2748558.png" alt="Not Found" width="150" />
+    </div>
+</div>
+
+

@@ -1,0 +1,54 @@
+﻿@page
+@model _233763P_BookwormsOnline.Pages.IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="text-center">User Profile</h3>
+                </div>
+                <div class="card-body text-center">
+                    <!-- Profile Picture -->
+                    @if (!string.IsNullOrEmpty(Model.UserProfile.PhotoPath))
+                    {
+                        <img src="~/uploads/@Model.UserProfile.PhotoPath" class="rounded-circle mb-3" width="150" height="150" alt="Profile Picture" />
+                    }
+                    else
+                    {
+                        <img src="~/uploads/default-profile.jpg" class="rounded-circle mb-3" width="150" height="150" alt="Default Profile Picture" />
+                    }
+
+                    <!-- User Information -->
+                    <h4>@Model.UserProfile.FirstName @Model.UserProfile.LastName</h4>
+                    <p><strong>Email:</strong> @Model.UserProfile.Email</p>
+                    <p><strong>Mobile No:</strong> @Model.UserProfile.MobileNo</p>
+                    <p><strong>Billing Address:</strong> @Model.UserProfile.BillingAddress</p>
+                    <p><strong>Shipping Address:</strong> @Model.UserProfile.ShippingAddress</p>
+
+                    <!-- Credit Card Information -->
+                    <div class="alert alert-info">
+                        <strong>Decrypted Credit Card:</strong>
+                        @if (!string.IsNullOrEmpty(Model.MaskedCreditCard))
+                        {
+                            <span>@Model.MaskedCreditCard</span>
+                        }
+                        else
+                        {
+                            <span>No Credit Card Information Available</span>
+                        }
+                    </div>
+
+                    <!-- Logout Button -->
+                    <form method="post" asp-page="/Logout" asp-page-handler="Logout">
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

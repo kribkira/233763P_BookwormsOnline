@@ -1,0 +1,24 @@
+﻿@page
+@{
+    ViewData["Title"] = "Access Denied";
+}
+
+<div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+    <h1 class="display-1 fw-bold text-danger animate__animated animate__bounceIn">403</h1>
+    <h2 class="text-secondary">Access Denied</h2>
+    <p class="lead text-muted">Oops! You do not have permission to view this page.</p>
+
+    <div class="card shadow-lg p-4 border-0" style="max-width: 400px;">
+        <p class="text-muted text-center">Try logging in with an authorized account or return to the homepage.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="/Login" class="btn btn-danger px-4 shadow-sm">Login</a>
+            <a href="/Index" class="btn btn-outline-secondary px-4 shadow-sm">Go Home</a>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/1030/1030379.png" alt="Access Denied" width="150" />
+    </div>
+</div>
+
+
